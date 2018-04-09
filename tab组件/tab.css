@@ -1,0 +1,38 @@
+    .box{
+          height: 300px;
+          width: 600px;
+          margin: 30px auto;
+          border: 1px solid #cccccc;
+          overflow: hidden;
+      }
+      .title,.nav{
+          font-size: 0;
+      }
+      .title{
+          border-bottom: 1px solid greenyellow;
+      }
+      .lit_tit{
+          display: inline-block;
+          font-size: 18px;
+          height: 100px;
+          line-height: 100px;
+          
+          width: 133px;
+          text-align: center;
+          cursor: pointer;
+      }
+      .nav{
+          width: 1200px;
+      }
+      .lit_nav{
+          display: none;
+          height: 199px;
+          width: 400px;
+          font-size: 18px;
+      }
+      .on{
+          background-color: goldenrod;
+      }
+      .show{
+          display: block;
+      }

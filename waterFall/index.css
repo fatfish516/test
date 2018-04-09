@@ -1,0 +1,15 @@
+#container {
+	position: relative;
+}
+.item {
+	float: left;
+	width: 200px;
+	position: absolute;
+	padding: 5px;
+	margin: 5px;
+	transition: all 1s;
+}
+
+.item img {
+	max-width:100%;
+}
