@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>模块化demo</title>
+
+
+  <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+  <div id="nav">
+    <div class="layout clearfix">
+      <a href="http://pvp.qq.com/" class="nav-logo" target="_blank" >王者荣耀</a>
+      <ul>
+        <li>
+          <a href="#">
+            <span class="nav-c">官网首页</span>
+            <span class="nav-e">HOME</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="nav-c">游戏资料</span>
+            <span class="nav-e">DATA</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="nav-c">攻略中心</span>
+            <span class="nav-e">RAUDERS</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="nav-c">赛事中心</span>
+            <span class="nav-e">MATH</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="nav-c">商城</span>
+            <span class="nav-e">STORE</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="nav-c">社区互动</span>
+            <span class="nav-e">COMMUNITY</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="nav-c">玩家支持</span>
+            <span class="nav-e">PLAYER</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!--全屏轮播-->
+  <div id="header">
+    <div class="carousel">
+      <ul class="img-ct clearfix">
+        <li class="item">
+          <div class="bg" data-imgSrc="http://shp.qpic.cn/ishow/2735090412/1504498773_1644740874_8004_sProdImgNo_2.jpg/0"></div>
+          <div class="main-title">
+            <div class="welcome">欢迎来到王者荣耀！</div>
+              <div class="fight">Never Give Up Fighting!</div>
+              <a href="#">JOIN US NOW</a>
+          </div>
+        </li>
+        <li class="item">
+          <div class="bg" data-imgSrc="http://shp.qpic.cn/ishow/2735081510/1502763559_1644740874_31081_sProdImgNo_2.jpg/0"></div>
+          <div class="main-title">
+            <div class="welcome">敌军还有5秒到达战场</div>
+              <div class="fight">Never Give Up Fighting!</div>
+              <a href="#">JOIN US NOW</a>
+          </div>
+        </li>
+        <li class="item">
+          <div class="bg" data-imgSrc="http://shp.qpic.cn/ishow/2735060718/1496831971_1644740874_17464_sProdImgNo_2.jpg/0"></div>
+          <div class="main-title">
+            <div class="welcome">5V5越塔强杀！开团</div>
+              <div class="fight">Never Give Up Fighting!</div>
+              <a href="#">JOIN US NOW</a>
+          </div>
+        </li>
+        <li class="item">
+          <div class="bg" data-imgSrc="http://shp.qpic.cn/ishow/2735042811/1493351733_1644740874_15997_sProdImgNo_2.jpg/0"></div>
+          <div class="main-title">
+            <div class="welcome">年度最佳电竞手游</div>
+              <div class="fight">Never Give Up Fighting!</div>
+              <a href="#">JOIN US NOW</a>
+          </div>
+        </li>
+        <li class="item">
+          <div class="bg" data-imgSrc="http://shp.qpic.cn/ishow/2735021019/1486724487_1644740874_10989_sProdImgNo_2.jpg/0"></div>
+          <div class="main-title">
+            <div class="welcome">Welcome To DOTA2</div>
+              <div class="fight">Never Give Up Fighting!</div>
+              <a href="#">JOIN US NOW</a>
+          </div>
+        </li>
+      </ul>
+      <a class="prev button"><</a>
+      <a class="next button">></a>
+      <ul class="bullets">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <!--新闻懒加载-->
+  <div id="news">
+    <div class="layout">
+      <h2>新闻资讯</h2>
+      <div class="news-content">
+        <ul class="news-ct clearfix">
+          <!--用于计算item宽度和列数，但不展示-->
+          <li class="item hide"></li>
+        </ul>
+        <a class="loadmore">加载更多</a>
+      </div>
+    </div>
+  </div>
+
+
+
+ 
+
+  <script type="text/javascript" src="./js/carousel.js"></script>
+  <script type="text/javascript" src="./js/gotop.js"></script>
+  <script type="text/javascript" src="./js/lazyload.js"></script>
+  
+  <script type="text/javascript" data-main="./js/main.js" src="./js/lib/require.js"></script>
+  
+  <script type="text/javascript" data-main="./dist/merge.js" src="./js/lib/require.js"></script>
+</body>
+</html>
