@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .wrap {
+      margin: 30px auto;
+      width: 590px;
+      height: 470px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ct {
+      width: 4130px;
+      position: absolute;
+    }
+
+    .ct a img {
+      width: 590px;
+      height: 470px;
+      float: left;
+    }
+
+    .btns {
+      position: absolute;
+      bottom: 5%;
+      left: 50%;
+      font-size: 0;
+      margin-left: -90px;
+    }
+
+    .btns span {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      border-radius: 15px;
+      margin: 0 3px;
+      background-color: grey;
+      cursor: pointer;
+    }
+
+    .btns span.on {
+      background-color: orangered;
+    }
+
+    .next,
+    .prev {
+      position: absolute;
+      top: 50%;
+      margin-top: -20px;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      border: 1px solid #fff;
+      border-radius: 20px;
+      color: #fff;
+      text-align: center;
+      font-size: 30px;
+      background: rgba(255, 255, 255, 0);
+      cursor: pointer;
+    }
+
+    .next:hover,
+    .prev:hover {
+      background: rgba(255, 255, 255, .8);
+    }
+
+    .next {
+      right: 0;
+    }
+
+    .prev {
+      left: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap" id="wrap">
+    <div class="ct" id="ct" style="left: -590px;">
+      <a href="#">
+        <img src="https://img10.360buyimg.com/da/jfs/t15649/180/606588298/196140/b15fe6af/5a38e2b6Nd7d1988c.jpg" alt="">
+      </a>
+      <a href="#">
+        <img src="https://m.360buyimg.com/babel/jfs/t16339/345/2022861351/90611/590f858/5a7aa162Nda69ece8.jpg" alt="">
+      </a>
+      <a href="#">
+        <img src="https://m.360buyimg.com/babel/jfs/t14221/284/2240490455/94203/e6b20b67/5a7bc62bN683c69f4.jpg" alt="">
+      </a>
+      <a href="#">
+        <img src="https://m.360buyimg.com/babel/jfs/t19606/334/445540821/96428/50cffa60/5a91257fN89094916.jpg" alt="">
+      </a>
+      <a href="#">
+        <img src="https://m.360buyimg.com/babel/jfs/t18343/300/466768653/101557/9152d847/5a7d6d02Nf2265944.jpg" alt="">
+      </a>
+      <a href="#">
+        <img src="https://img10.360buyimg.com/da/jfs/t15649/180/606588298/196140/b15fe6af/5a38e2b6Nd7d1988c.jpg" alt="">
+      </a>
+      <a href="#">
+        <img src="https://m.360buyimg.com/babel/jfs/t16339/345/2022861351/90611/590f858/5a7aa162Nda69ece8.jpg" alt="">
+      </a>
+    </div>
+    <div class="btns" id="btns">
+      <span class="on"></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <span class="next" id="next">&gt;</span>
+    <span class="prev" id="prev">&lt;</span>
+  </div>
+  <script>
+    var wrap = document.getElementById('wrap')
+    var ct = document.getElementById('ct')
+    var next = document.getElementById('next')
+    var prev = document.getElementById('prev')
+
+    var btns = document.getElementById('btns').getElementsByTagName('span')
+    var index = 1
+
+    function btnShow() {
+      for (var i = 0; i < btns.length; i++) {
+        if (btns[i].className == 'on') {
+          btns[i].className = ''
+        }
+      }
+      btns[index - 1].className = 'on'
+    }
+
+    function animate(offset) {
+      var newLeft = parseInt(ct.style.left) + offset
+      ct.style.left = newLeft + 'px'
+      if (newLeft < -2950) {
+        ct.style.left = -590 + 'px'
+      }
+      if (newLeft > -590) {
+        ct.style.left = -2950 + 'px'
+      }
+    }
+    function btn_next() {
+      index += 1
+      if (index > 5) {
+        index = 1
+      }
+      btnShow()
+      animate(-590)
+    }
+    next.addEventListener('click', btn_next)
+
+    function btn_prev() {
+      index -= 1
+      if (index < 1) {
+        index = 5
+      }
+      btnShow()
+      animate(590)
+    }
+    prev.addEventListener('click', btn_prev)
+
+    var timer
+    function play() {
+      timer = setInterval(btn_next, 1500)
+    }
+    play()
+    function stop() {
+      clearInterval(timer)
+    }
+    wrap.onmouseover = stop
+    wrap.onmouseout = play
+  </script>
+</body>
+
+</html>
