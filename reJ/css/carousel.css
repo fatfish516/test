@@ -1,0 +1,101 @@
+*{
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+ul,li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.clearfix::after{
+	content: "";
+	display: block;
+	clear: both;
+}
+
+#panel{
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.img-ct{
+	position: absolute;
+	width: 500%;
+}
+
+.img-ct >li {
+	width: 20%;
+	float: left;
+}
+.img-ct img{
+	width: 100%;
+}
+
+#panel .btn{
+	width: 30px;
+	height: 30px;
+	background: #ccc;
+	border: 1px solid #ccc;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	text-decoration: none;
+	text-align: center;
+	line-height: 26px;
+	color: #fff;
+	opacity: 0.7;
+}
+
+.pre{
+	left: 10px;
+}
+.next{
+	right: 10px;
+}
+
+.bullet-ct{
+	position: relative;
+	top: 90vh;
+/*	width: 200px;
+	height: 20px;
+	text-align: center;*/
+}
+.bullet{
+	width: 120px;
+	height: 20px;
+	margin: 0 auto;
+	opacity: 0.7;
+}
+.bullet>li{
+	width: 40px;
+	height: 10px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	float: left;
+	text-align: center;
+	border-left: none;
+	cursor: pointer;
+}
+.bullet>li:first-child{
+	border: 1px solid #ccc;
+}
+.bullet>li[class="active"]{
+	background: #ccc;
+}
+
+/*gotop*/
+#go-top {
+	padding: 15px 2px;
+	border: 1px solid #ccc;
+	position: fixed;
+	bottom: 5px;
+	right: 5px;
+	background: #ccc;
+	opacity: 0.7;
+	cursor: pointer;
+
+}
